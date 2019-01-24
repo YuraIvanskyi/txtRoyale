@@ -32,51 +32,47 @@
 
   </header>
   <article id="mainArticle">
-    <div id="ColumnContainer">
-        <div id="col1" class="in-container">
-            <canvas id="myChart1" width="100" height="100"></canvas>
-        </div>
-        <div id="col2" class="in-container">
-            <canvas id="myChart2" width="100" height="100"></canvas>
-        </div>
-        <div id="col3" class="in-container">
-            <canvas id="myChart3" width="100" height="100"></canvas>
-        </div>
-        <div id="col4" class="in-container">
-            <canvas id="myChart4" width="100" height="100"></canvas>
-        </div>
+    <div id="ChartContainer">
+            <canvas id="ChampionsChart" width="300" height="300"></canvas>
     </div>
+    
   </article>
   <nav id="mainNav">
       <div class="form-style-10">
         <h1>Join a fight!<span>Create your hero and anihilate enemies!</span></h1>
-        <form>
             <div class="section"><span>1</span>Champion info:</div>
             <div class="inner-wrap">
-                <label>Name<input type="text" name="field1" /></label>
-                <label>Champion Avatar<textarea name="field2"></textarea></label>
+                <label>Name<input type="text" name="NameField" /></label>
+                <label>Champion Avatar<textarea name="AvatarField"></textarea></label>
             </div>
             <div class="section"><span>2</span>Stats</div>
             <div class="inner-wrap">
                 <label>Attack</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="AttackField">
                 </div>
                 <label>HP</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="HPField">
+                </div>
+                <label>Resist</label>
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="ResistField">
+                </div>
+                <label>Regeneration</label>
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="RegenerationField">
                 </div>
             </div>
-            <div class="button-section">
-
-             <input type="submit" name="Sign Up" onclick="addFighter" />
+            <div class="button-section"> 
+                <button onclick="addFighter()">Add Hero</button>
+                <button>Start the Fight!</button>
             </div>
-        </form>
-        <button onclick="addFighter">GOGOGOG</button>
+        
     </div>
   </nav>
-  <div id="siteAds">Ads</div>
-  <footer id="pageFooter">Footer</footer>
+  <div id="siteAds">Battle Log</div>
+  <footer id="pageFooter">Additional Info</footer>
   <script src="scripts/logic_main.js"></script>
   <script src="scripts/champions.js"></script>
 </body>

@@ -3,9 +3,9 @@ body {
   grid-template-areas: 
     "header header header"
     "nav article ads"
-    "nav footer footer";
+    "footer footer footer";
   grid-template-rows: 80px 1fr 60px;  
-  grid-template-columns: 20% 1fr 15%;
+  grid-template-columns: 20% 1fr 45%;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   height: 100vh;
@@ -62,10 +62,9 @@ header, footer, article, nav {
     grid-template-columns: 1fr;
  }
 }
-.in-container { 
-  width: 25%; 
-  height: 50%; 
-  float: left; 
+#ChartContainer { 
+  width: 100%; 
+  height: 100%;  
   display: inline-block;
 }
 #div1 { background: #DDD; }
@@ -84,11 +83,12 @@ header, footer, article, nav {
   border-color: black;
   border-style: solid;
   border-width: 1px;
+  border-radius: 2%;
   width: 100%; /* Full-width */
   height: 25px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
 }
@@ -101,6 +101,7 @@ header, footer, article, nav {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
+  border-radius: 2%;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
   background: #000; /* Green background */
@@ -149,7 +150,8 @@ header, footer, article, nav {
   display: block;
   font: 13px Arial, Helvetica, sans-serif;
   color: #888;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .form-style-10 input[type="text"],
 .form-style-10 input[type="date"],
@@ -196,7 +198,7 @@ header, footer, article, nav {
   margin-top: -3px;
 }
 .form-style-10 input[type="button"], 
-.form-style-10 input[type="submit"]{
+.form-style-10 input[type="submit"], button {
   background: #283338;
   padding: 8px 20px 8px 20px;
   border-radius: 5px;
@@ -212,7 +214,7 @@ header, footer, article, nav {
   font-size: 15px;
 }
 .form-style-10 input[type="button"]:hover, 
-.form-style-10 input[type="submit"]:hover{
+.form-style-10 input[type="submit"]:hover, button:hover{
   background: #283338;
   -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
   -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
@@ -225,4 +227,10 @@ header, footer, article, nav {
   color: #283338;
   margin-top: 10px;
   text-align: right;
+}
+
+#ChampionsChart {
+  width: 50%; 
+  height: 50%;  
+  display: inline-block;
 }
