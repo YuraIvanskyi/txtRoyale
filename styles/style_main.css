@@ -1,0 +1,228 @@
+body { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "nav article ads"
+    "nav footer footer";
+  grid-template-rows: 80px 1fr 60px;  
+  grid-template-columns: 20% 1fr 15%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  } 
+  header {
+    text-align: right;
+  } 
+  header img {
+    height: 50px;
+    width: 50px;
+    padding: 0px;
+    margin: 0px;
+  }
+  header span {
+    text-align: right;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 48px;
+  }
+header, footer, article, nav {
+  padding: 1.2em;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  
+  }
+#pageHeader {
+  grid-area: header;
+  
+  }
+#pageFooter {
+  grid-area: footer;
+  }
+#mainArticle { 
+  grid-area: article;      
+  }
+#mainNav { 
+  grid-area: nav; 
+  }
+#siteAds { 
+  grid-area: ads; 
+  padding: 1.2em;
+  } 
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  body { 
+    grid-template-areas: 
+      "header"
+      "article"
+      "ads"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;  
+    grid-template-columns: 1fr;
+ }
+}
+.in-container { 
+  width: 25%; 
+  height: 50%; 
+  float: left; 
+  display: inline-block;
+}
+#div1 { background: #DDD; }
+#div2 { background: #AAA; }
+#div3 { background: #777; }
+#div4 { background: #444; }
+
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+.slider {
+  
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.form-style-10{
+  width:250px;
+  padding:30px;
+  margin: auto;
+  background: #FFF;
+  border-radius: 10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+.form-style-10 .inner-wrap{
+  padding: 30px;
+  background: #F8F8F8;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+.form-style-10 h1{
+  background: #283338;
+  padding: 20px 30px 15px 30px;
+  margin: -30px -30px 30px -30px;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  font: normal 30px 'Bitter', serif;
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  border: 1px solid #283338;
+}
+.form-style-10 h1 > span{
+  display: block;
+  margin-top: 2px;
+  font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-10 label{
+  display: block;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #888;
+  margin-bottom: 15px;
+}
+.form-style-10 input[type="text"],
+.form-style-10 input[type="date"],
+.form-style-10 input[type="datetime"],
+.form-style-10 input[type="email"],
+.form-style-10 input[type="number"],
+.form-style-10 input[type="search"],
+.form-style-10 input[type="time"],
+.form-style-10 input[type="url"],
+.form-style-10 input[type="password"],
+.form-style-10 textarea,
+.form-style-10 select {
+  display: block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  -webkit-border-radius:6px;
+  -moz-border-radius:6px;
+  border: 2px solid #fff;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.form-style-10 .section{
+  font: normal 20px 'Bitter', serif;
+  color: #283338;
+  margin-bottom: 5px;
+}
+.form-style-10 .section span {
+  background: #283338;
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 4px solid #fff;
+  font-size: 14px;
+  margin-left: -45px;
+  color: #fff;
+  margin-top: -3px;
+}
+.form-style-10 input[type="button"], 
+.form-style-10 input[type="submit"]{
+  background: #283338;
+  padding: 8px 20px 8px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  font: normal 30px 'Bitter', serif;
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  border: 1px solid #283338;
+  font-size: 15px;
+}
+.form-style-10 input[type="button"]:hover, 
+.form-style-10 input[type="submit"]:hover{
+  background: #283338;
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+.form-style-10 .privacy-policy{
+  float: right;
+  width: 250px;
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #283338;
+  margin-top: 10px;
+  text-align: right;
+}

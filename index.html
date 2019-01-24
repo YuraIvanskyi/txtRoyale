@@ -1,0 +1,82 @@
+<!doctype html>
+<title>txtRoyale</title>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/style_main.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="scripts/Chart.min.js"></script>
+</head>
+<body>
+  <header id="pageHeader">
+    <span>txt. Royale;</span>
+    <img src="img/icons/broadsword.png">
+    <img src="img/icons/hearts.png">
+    <img src="img/icons/bell-shield.png">
+    <img src="img/icons/clockwork.png">
+    <img src="img/icons/fairy-wand.png">
+    <img src="img/icons/guarded-tower.png">
+    <img src="img/icons/locked-chest.png">
+    <img src="img/icons/broadsword.png">
+    <img src="img/icons/hearts.png">
+    <img src="img/icons/bell-shield.png">
+    <img src="img/icons/clockwork.png">
+    <img src="img/icons/fairy-wand.png">
+    <img src="img/icons/guarded-tower.png">
+    <img src="img/icons/locked-chest.png">
+    <img src="img/icons/broadsword.png">
+    <img src="img/icons/hearts.png">
+    <img src="img/icons/bell-shield.png">
+    <img src="img/icons/clockwork.png">
+    <img src="img/icons/fairy-wand.png">
+    <img src="img/icons/guarded-tower.png">
+    <img src="img/icons/locked-chest.png">
+
+  </header>
+  <article id="mainArticle">
+    <div id="ColumnContainer">
+        <div id="col1" class="in-container">
+            <canvas id="myChart1" width="100" height="100"></canvas>
+        </div>
+        <div id="col2" class="in-container">
+            <canvas id="myChart2" width="100" height="100"></canvas>
+        </div>
+        <div id="col3" class="in-container">
+            <canvas id="myChart3" width="100" height="100"></canvas>
+        </div>
+        <div id="col4" class="in-container">
+            <canvas id="myChart4" width="100" height="100"></canvas>
+        </div>
+    </div>
+  </article>
+  <nav id="mainNav">
+      <div class="form-style-10">
+        <h1>Join a fight!<span>Create your hero and anihilate enemies!</span></h1>
+        <form>
+            <div class="section"><span>1</span>Champion info:</div>
+            <div class="inner-wrap">
+                <label>Name<input type="text" name="field1" /></label>
+                <label>Champion Avatar<textarea name="field2"></textarea></label>
+            </div>
+            <div class="section"><span>2</span>Stats</div>
+            <div class="inner-wrap">
+                <label>Attack</label>
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+                </div>
+                <label>HP</label>
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+                </div>
+            </div>
+            <div class="button-section">
+
+             <input type="submit" name="Sign Up" onclick="addFighter" />
+            </div>
+        </form>
+        <button onclick="addFighter">GOGOGOG</button>
+    </div>
+  </nav>
+  <div id="siteAds">Ads</div>
+  <footer id="pageFooter">Footer</footer>
+  <script src="scripts/logic_main.js"></script>
+  <script src="scripts/champions.js"></script>
+</body>
