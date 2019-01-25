@@ -2,6 +2,7 @@ window.onload = function (){
     this.ChampionsChartContext = document.getElementById("ChampionsChart").getContext('2d');
     this.ChampionsChart = createChart(ChampionsChartContext);
     this.figthers = [];
+    $("select").imagepicker();
 }
 function createChart(canvasObj) {
     return new Chart(canvasObj, {
@@ -33,7 +34,8 @@ function addFighter() {
         hp:retrivedStats[1],
         defence:retrivedStats[2],
         resist:retrivedStats[3],
-        regen:retrivedStats[4]
+        regen:retrivedStats[4],
+        icon:retrivedStats[5]
     }
     var newColor = generateRandomColor();
     var championDataset = {
@@ -47,7 +49,9 @@ function addFighter() {
         championLoadout.name,
         championLoadout.attack,
         championLoadout.hp,
-        championLoadout.resist))
+        championLoadout.resist,
+        championLoadout.defence,
+        championLoadout.icon))
     ChampionsChart.data.datasets.push(championDataset);
     ChampionsChart.update();
 }
@@ -58,6 +62,7 @@ function getChampionStats() {
         document.getElementById('DefenceField').value,
         document.getElementById('ResistField').value,
         document.getElementById('RegenerationField').value,
+        document.getElementById('imgPicker').value
     ];
     return values;
 }

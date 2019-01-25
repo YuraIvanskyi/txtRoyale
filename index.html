@@ -2,8 +2,11 @@
 <title>txtRoyale</title>
 <head>
     <link rel="stylesheet" type="text/css" href="styles/style_main.css">
+    <link rel="stylesheet" type="text/css" href="styles/image-picker.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="scripts/Chart.min.js"></script>
+    <script src="scripts/image-picker.min.js"></script>
 </head>
 <body>
   <header id="pageHeader">
@@ -40,7 +43,22 @@
             <div class="section"><span>1</span>Champion info:</div>
             <div class="inner-wrap">
                 <label>Name<input type="text" id="NameField" /></label>
-                <label>Avatar<textarea name="AvatarField"></textarea></label>
+                <label>Avatar
+                        <select id="imgPicker" class="image-picker show-html">
+                            <option data-img-src="img/avatars/01b.2.png" data-img-class="first" data-img-alt="Page 1" value="01b.2"></option>
+                            <option data-img-src="img/avatars/08.3.png"  data-img-alt="Page 2" value="08.3"></option>
+                            <option data-img-src="img/avatars/09.4.png"  data-img-alt="Page 2" value="09.4"></option>
+                            <option data-img-src="img/avatars/10.0.png"  data-img-alt="Page 2" value="10.0"></option>
+                            <option data-img-src="img/avatars/12.4.png"  data-img-alt="Page 2" value="12.4"></option>
+                            <option data-img-src="img/avatars/03.6.png"  data-img-alt="Page 2" value="03.6"></option>
+                            <option data-img-src="img/avatars/07.4.png"  data-img-alt="Page 2" value="07.4"></option>
+                            <option data-img-src="img/avatars/04.3.png"  data-img-alt="Page 2" value="04.3"></option>
+                            <option data-img-src="img/avatars/05.0.png"  data-img-alt="Page 2" value="05.0"></option>
+                            <option data-img-src="img/avatars/02.1.png"  data-img-alt="Page 2" value="02.1"></option>
+                            <option data-img-src="img/avatars/11.0.png"  data-img-alt="Page 2" value="11.0"></option>
+                            <option data-img-src="img/avatars/19.1.png" data-img-alt="Page 12" data-img-class="last" value="19.1"></option>
+                        </select>
+                </label>
             </div>
             <div class="section"><span>2</span>Stats</div>
             <div class="inner-wrap">
