@@ -26,9 +26,6 @@
     <img src="img/icons/hearts.png">
     <img src="img/icons/bell-shield.png">
     <img src="img/icons/clockwork.png">
-    <img src="img/icons/fairy-wand.png">
-    <img src="img/icons/guarded-tower.png">
-    <img src="img/icons/locked-chest.png">
 
   </header>
   <article id="mainArticle">
@@ -42,7 +39,7 @@
         <h1>Join a fight!<span>Create your hero and anihilate enemies!</span></h1>
             <div class="section"><span>1</span>Champion info:</div>
             <div class="inner-wrap">
-                <label>Name<input type="text" name="NameField" /></label>
+                <label>Name<input type="text" id="NameField" /></label>
                 <label>Avatar<textarea name="AvatarField"></textarea></label>
             </div>
             <div class="section"><span>2</span>Stats</div>
@@ -61,7 +58,7 @@
                 </div>
                 <label id="RegenFieldInput">Regen : [0]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="RegenerationField" onchange="updateRegenFieldInput(this.value);">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="RegenerationField"  onchange="updateRegenFieldInput(this.value);">
                 </div>
                 <label id="DefenceFieldInput">Defence: [0]</label>
                 <div class="slidecontainer">
@@ -70,12 +67,12 @@
             </div>
             <div class="button-section" id="buttonSection"> 
                 <button onclick="addFighter()">Join</button>
-                <button>Start the Fight!</button>
+                <button onclick="ChampionsFight()">Start the Fight!</button>
             </div>
         
     </div>
   </nav>
-  <div id="siteAds">Battle Log</div>
+  <div id="siteAds">Battle Log:</div>
   <footer id="pageFooter">Additional Info</footer>
   <script src="scripts/logic_main.js"></script>
   <script src="scripts/champions.js"></script>

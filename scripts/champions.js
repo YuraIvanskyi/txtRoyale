@@ -1,11 +1,12 @@
-function Champion(name, attack, hp, resist, h) {
+function Champion(name, attack, hp, resist, hpRegen=0, icon='') {
     this.attack = attack;
     this.hp = hp;
     this.resist = resist;
     this.name = name;
-    this.hpRegen = 
+    this.hpRegen = hpRegen;
+    this.icon = icon;
     this.hitOpponent = function (opponent) {
-        console.log(`[${this.name}] with attack [${this.attack}] wants to hit [${opponent.name}] with hp [${opponent.hp}]`)
+        outputToScreen(`[${this.name}] with attack [${this.attack}] wants to hit [${opponent.name}] with hp [${opponent.hp}]`)
         var hitPower = undefined;
         if(this.attack - opponent.resist < 0)
             hitPower = 0;
@@ -13,56 +14,60 @@ function Champion(name, attack, hp, resist, h) {
             hitPower = this.attack - opponent.resist;
         
         opponent.hp = opponent.hp - hitPower;
-        console.log(`[${opponent.name}]:[${opponent.hp}] HP left.`)
+        outputToScreen(`[${opponent.name}]:[${opponent.hp}] HP left.`)
     }
     this.applyPermanentBuffs = function() {
 
     }
+    this.toString = function() {
+        return `[${this.name}]: [${this.hp}] <img class ="battle-log-icon" src="img/icons/hearts.png"> left.`
+    }
 }
-var champion1 = new Champion('BountyHunter',20,105,5);
-var champion2 = new Champion('Fairy',10,55,3);
-var champion3 = new Champion('Demon',25,135,9);
-var champion4 = new Champion('Angel',25,120,8);
-var champion5 = new Champion('Goblin',15,75,1);
+
 
 function fight(champions){
     var battlefield = champions;
     
-    console.log('Start with stats:')
+    outputToScreen('Start with stats:',true)
     for(i in battlefield) {
-        console.log(battlefield[i]);
+        outputToScreen(battlefield[i]);
     }
     var round = 1;
     while(battlefield.length !== 1) {
-        console.log(`Round ${round}!`)
-        for(unit in battlefield) {
-            var championThatHits = battlefield[parseInt(unit)];
-            if(championThatHits.hp <= 0) {
-                continue;
+        outputToScreen(`Round ${round}!`,true);
+            for(unit in battlefield) {
+                    var championThatHits = battlefield[parseInt(unit)];
+                    if(championThatHits.hp <= 0) {
+                        continue;
+                    }
+                    else {
+                        
+                        if(parseInt(unit) === battlefield.length - 1) {
+                            championThatHits.hitOpponent(battlefield[0])
+                        }
+                        else {
+                            championThatHits.hitOpponent(battlefield[parseInt(unit)+1])
+                        }
+                    }
             }
-            else {
-                
-                if(parseInt(unit) === battlefield.length - 1) {
-                    championThatHits.hitOpponent(battlefield[0])
-                }
-                else {
-                    championThatHits.hitOpponent(battlefield[parseInt(unit)+1])
-                }
+            for(i in battlefield) {
+                if(battlefield[i].hp <= 0)
+                    battlefield.splice(i,1)
             }
-        }
+            outputToScreen('Survived:',true)
+            for(i in battlefield) {
+                outputToScreen(battlefield[i]);
+            }
+            
+            round++;
+            /*if(battlefield.length === 1)
+                clearInterval();*/
         
-        
-        for(i in battlefield) {
-            if(battlefield[i].hp <= 0)
-                battlefield.splice(i,1)
-        }
-        console.log('Survived:')
-        for(i in battlefield) {
-            console.log(battlefield[i]);
-        }
-        
-        round++;
     }
 }
-/*var ChampArray = [champion1,champion2,champion3,champion4,champion5]
-fight(ChampArray)*/
+function outputToScreen(value, withBreaks=false) {
+    if(withBreaks)
+        document.getElementById('siteAds').innerHTML += `<br><br>${value}<br>`;
+    else
+        document.getElementById('siteAds').innerHTML += `<br>${value}`;
+}

@@ -13,6 +13,7 @@ body {
   } 
   header {
     text-align: right;
+    border-bottom: 4px dashed #1b1a19;
   } 
   header img {
     height: 50px;
@@ -27,10 +28,7 @@ body {
   }
 header, footer, article, nav {
   padding: 1.2em;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  
+  font-family: 'Press Start 2P', cursive;
   }
 #pageHeader {
   grid-area: header;
@@ -38,16 +36,25 @@ header, footer, article, nav {
   }
 #pageFooter {
   grid-area: footer;
+  border-top: 4px dashed #1b1a19;
   }
 #mainArticle { 
   grid-area: article;      
+  border: 4px dashed #1b1a19;
   }
 #mainNav { 
   grid-area: nav; 
+  border: 4px dashed #1b1a19;
+  border-left: none;
   }
 #siteAds { 
+  border: 4px dashed #1b1a19;
   grid-area: ads; 
   padding: 1.2em;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  overflow: auto;
+  margin-right: 5px;
   } 
 /* Stack the layout on small devices/viewports. */
 @media all and (max-width: 575px) {
@@ -67,11 +74,6 @@ header, footer, article, nav {
   height: 100%;  
   display: inline-block;
 }
-#div1 { background: #DDD; }
-#div2 { background: #AAA; }
-#div3 { background: #777; }
-#div4 { background: #444; }
-
 
 .slidecontainer {
   width: 100%; /* Width of the outside container */
@@ -83,7 +85,6 @@ header, footer, article, nav {
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  border-radius: 2%;
   width: 100%; /* Full-width */
   height: 25px; /* Specified height */
   background: #d3d3d3; /* Grey background */
@@ -115,9 +116,7 @@ header, footer, article, nav {
 }
 .form-style-10 .inner-wrap{
   padding: 30px;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
+  border: 4px dashed #1b1a19;
   margin-bottom: 15px;
 }
 .form-style-10 h1{
@@ -156,9 +155,7 @@ header, footer, article, nav {
   -moz-box-sizing: border-box;
   width: 100%;
   padding: 8px;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
+  border: 4px dashed #1b1a19;
 }
 #buttonSection {
   text-align: center;
@@ -193,18 +190,39 @@ header, footer, article, nav {
   -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
   -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
   box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-  border: 1px solid #283338;
+  border: 4px dashed #1b1a19;
   font-size: 15px;
 }
 .form-style-10 input[type="button"]:hover, 
 .form-style-10 input[type="submit"]:hover, button:hover{
-  -moz-box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0,8);
-  -webkit-box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.8);
-  box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.8);
+  border: 4px solid #1b1a19;
+  transform: scale(.9);
 }
 
 #ChampionsChart {
   width: 50%; 
   height: 50%;  
   display: inline-block;
+}
+
+#siteAds::-webkit-scrollbar {
+  width: 10px;
+  background: white;
+  
+}
+
+/* Track */
+#siteAds::-webkit-scrollbar-track {
+  background: white;
+  border-left: 4px dashed #1b1a19; 
+  margin-right: 20px;
+}
+
+/* Handle */
+#siteAds::-webkit-scrollbar-thumb {
+  background: black;
+}
+.battle-log-icon {
+  width: 24px;
+  height: 24px;
 }

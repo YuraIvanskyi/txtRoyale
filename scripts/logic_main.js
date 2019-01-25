@@ -1,17 +1,7 @@
 window.onload = function (){
     this.ChampionsChartContext = document.getElementById("ChampionsChart").getContext('2d');
-    //this.ctx2 = document.getElementById("myChart2").getContext('2d');
-    //this.ctx3 = document.getElementById("myChart3").getContext('2d');
-    //this.ctx4 = document.getElementById("myChart4").getContext('2d');
     this.ChampionsChart = createChart(ChampionsChartContext);
-    //this.myChart2 = createChart(ctx2);
-    //this.myChart3 = createChart(ctx3);
-    //this.myChart4 = createChart(ctx4);
-}
-
-function generateValues() {
-    var values = [parseInt(Math.random()*100),parseInt(Math.random()*100),parseInt(Math.random()*100),parseInt(Math.random()*100),parseInt(Math.random()*100)];
-    return values;
+    this.figthers = [];
 }
 function createChart(canvasObj) {
     return new Chart(canvasObj, {
@@ -36,17 +26,40 @@ function createChart(canvasObj) {
     });
 }
 function addFighter() {
+    var retrivedStats = getChampionStats();
+    var championLoadout = {
+        name:document.getElementById("NameField").value,
+        attack:retrivedStats[0],
+        hp:retrivedStats[1],
+        defence:retrivedStats[2],
+        resist:retrivedStats[3],
+        regen:retrivedStats[4]
+    }
     var newColor = generateRandomColor();
     var championDataset = {
-        label: document.getElementsByName("NameField").innerText,
+        label: championLoadout.name,
         borderColor: newColor.color,
         backgroundColor: newColor.alpha,
         pointBorderColor: newColor.color,
-        data: generateValues(),
+        data: retrivedStats,
     };
-
+    figthers.push(new Champion(
+        championLoadout.name,
+        championLoadout.attack,
+        championLoadout.hp,
+        championLoadout.resist))
     ChampionsChart.data.datasets.push(championDataset);
     ChampionsChart.update();
+}
+function getChampionStats() {
+    var values = [
+        document.getElementById('AttackField').value,
+        document.getElementById('HPField').value,
+        document.getElementById('DefenceField').value,
+        document.getElementById('ResistField').value,
+        document.getElementById('RegenerationField').value,
+    ];
+    return values;
 }
 function generateRandomColor () {
     var color = `${parseInt(Math.random()*255)}, ${parseInt(Math.random()*255)}, ${parseInt(Math.random()*255)}`
@@ -54,15 +67,6 @@ function generateRandomColor () {
         alpha:`rgba(${color}, 0.2)`,
         color:`rgba(${color}, 1)`
     }
-}
-function addData(chart, label, data) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.data.datasets[0].backgroundColor.push(generateRandomColor());
-    chart.data.datasets[0].borderColor.push('rgba(0, 0, 0, 1)');
-    chart.update();
 }
 function updateAttackFieldInput(val) {
     var current = document.getElementById('AttackFieldInput').innerHTML
@@ -83,4 +87,10 @@ function updateRegenFieldInput(val) {
 function updateDefenceFieldInput(val) {
     var current = document.getElementById('DefenceFieldInput').innerHTML
     document.getElementById('DefenceFieldInput').innerHTML = current.replace(/([\[(])(.+?)([\])])/g, `[${val}]`); 
+}
+function ChampionsFight(){
+    if(figthers.length <= 1)
+        alert('Are you little mentaly retarded? Send someone to battle before starting it!')
+    else 
+        fight(figthers);
 }
