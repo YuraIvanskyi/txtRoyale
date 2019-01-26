@@ -34,7 +34,7 @@ function Champion(name, attack, hp, resist, icon, regen, buff) {
         if(opponent.buff === 'spike') {
             var spikeStrike = parseInt(opponent.attack/3) > 0 ? parseInt(opponent.attack/3) : 1;
             this.hp -= spikeStrike;
-            outputToScreen(`<span class="battle-log-text-buff">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}] suffers from [<img class ="battle-log-icon" src="img/icons/spike.png">] : gets [<img class ="battle-log-icon" src="img/icons/energy.png">${spikeStrike}, [<img class ="battle-log-icon" src="img/icons/favorite-heart-button.png">${this.hp}] left.</span>`)
+            outputToScreen(`<span class="battle-log-text-buff">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}] suffers from [<img class ="battle-log-icon" src="img/icons/spike.png">] : gets [<img class ="battle-log-icon" src="img/icons/energy.png">${spikeStrike}], [<img class ="battle-log-icon" src="img/icons/favorite-heart-button.png">${this.hp}] left.</span>`)
             outputToScreen(`<span class="battle-log-text-info">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}]:[${this.hp}<img class ="battle-log-icon" src="img/icons/favorite-heart-button.png">] left.</span>`)
         }
 
@@ -86,7 +86,7 @@ function Champion(name, attack, hp, resist, icon, regen, buff) {
             if(this.debuffList[item].debuffName === 'sleep' && this.debuffList[item].duration > 0){
                 this.sleepy = true;
                 this.debuffList[item].duration--;
-                outputToScreen(`<span class="battle-log-text-buff">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}] suffers from [<img class ="battle-log-icon" src="img/icons/sleep.png">] : will not hit on his turn.</span>`)
+                outputToScreen(`<span class="battle-log-text-buff">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}] suffers from [<img class ="battle-log-icon" src="img/icons/sleep.png">] : will not attack this turn.</span>`)
             }
         }
         while(this.debuffList.some(e => e.duration == 0)){

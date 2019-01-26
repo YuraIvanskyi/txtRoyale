@@ -73,16 +73,22 @@
                 <div class="slidecontainer">
                   <input type="range" min="1" max="200" value="50" class="slider" id="HPField" onchange="updateHPFieldInput(this.value);">
                 </div>
-                <label id="ResistFieldInput">Defence : [0]</label>
+                <label id="ResistFieldInput">Defence : [1]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="50" value="0" class="slider" id="ResistField" onchange="updateResistFieldInput(this.value);">
+                  <input type="range" min="1" max="50" value="1" class="slider" id="ResistField" onchange="updateResistFieldInput(this.value);">
                 </div>
-                <label id="RegenFieldInput">Regen : [0]</label>
+                <label id="RegenFieldInput">Regen : [1]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="10" value="0" class="slider" id="RegenerationField" onchange="updateRegenFieldInput(this.value);">
+                  <input type="range" min="1" max="10" value="1" class="slider" id="RegenerationField" onchange="updateRegenFieldInput(this.value);">
                 </div>
-                <label id="DefenceFieldInput">Special Skill: 
-                        <select id="buffPicker" class="image-picker show-html">
+                <label class="tooltip" id="DefenceFieldInput">Special Skill: 
+                        <span class="tooltiptext">1. Spike - retruns 1/3 damage to attacker.
+                            <br>2. Fire - burns enemy for 2 rounds, deals 10 damage each.
+                            <br>3. Sleep - enemy does not attack next round.
+                            <br>4. Cold - weakens enemie's attack and defence for 2 rounds.
+                            <br><br> Fire, Sleep, Cold - 20% chance, Spike - 100% passive.
+                        </span>
+                        <select id="buffPicker" class="image-picker show-html" >
                                 <option data-img-src="img/icons/spike.png" data-img-class="first" data-img-alt="Page 1" value="spike"></option>
                                 <option data-img-src="img/icons/fire.png"  data-img-alt="Page 2" value="fire"></option>
                                 <option data-img-src="img/icons/sleep.png"  data-img-alt="Page 2" value="sleep"></option>
