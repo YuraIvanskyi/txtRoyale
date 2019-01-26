@@ -109,7 +109,7 @@ function Champion(name, attack, hp, resist, icon, regen, buff) {
         outputToScreen(`<span class="battle-log-text-heal">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}]: regenerates [${this.hpRegen}<img class ="battle-log-icon" src="img/icons/favorite-heart-button.png">], [${this.hp}<img class ="battle-log-icon" src="img/icons/favorite-heart-button.png">] left.</span>`)
     }
     this.toString = function() {
-        return `<span class="battle-log-text-info">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}] : [${this.hp}<img class ="battle-log-icon" src="img/icons/favorite-heart-button.png">],[<img class ="battle-log-icon" src="img/icons/sword.png">${this.attack}],[<img class ="battle-log-icon" src="img/icons/def.png">${this.resist}],[<img class ="battle-log-icon" src="img/icons/heal.png">${this.regen}],[<img class ="battle-log-icon" src="img/icons/${this.buff}.png">]</span>`
+        return `<span class="battle-log-text-info">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}] : [${this.hp}<img class ="battle-log-icon" src="img/icons/favorite-heart-button.png">],[<img class ="battle-log-icon" src="img/icons/sword.png">${this.attack}],[<img class ="battle-log-icon" src="img/icons/def.png">${this.resist}],[<img class ="battle-log-icon" src="img/icons/heal.png">${this.hpRegen}],[<img class ="battle-log-icon" src="img/icons/${this.buff}.png">]</span>`
     }
 }
 
