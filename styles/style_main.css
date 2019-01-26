@@ -37,10 +37,13 @@ header, footer, article, nav {
 #pageFooter {
   grid-area: footer;
   border-top: 4px dashed #1b1a19;
+  padding-bottom: 0;
+  padding-top: 0;
   }
 #mainArticle { 
   grid-area: article;      
   border: 4px dashed #1b1a19;
+  text-align: center;
   }
 #mainNav { 
   grid-area: nav; 
@@ -70,8 +73,7 @@ header, footer, article, nav {
  }
 }
 #ChartContainer { 
-  width: 100%; 
-  height: 100%;  
+  width: 100%;   
   display: inline-block;
 }
 
@@ -225,6 +227,30 @@ header, footer, article, nav {
 .battle-log-icon {
   width: 16px;
   height: 16px;
+}
+.battle-log-text-attack {
+  background: lightcoral;
+  border: 1px solid black;
+  line-height: 1.4;
+  padding: 1px;
+}
+.battle-log-text-heal {
+  background: lightgreen;
+  border: 1px solid black;
+  line-height: 1.4;
+  padding: 1px;
+}
+.battle-log-text-info {
+  background: lightgray;
+  border: 1px solid black;
+  line-height: 1.4;
+  padding: 1px;
+}
+.battle-log-text-buff {
+  background: violet;
+  border: 1px solid black;
+  line-height: 1.4;
+  padding: 1px;
 }
 #imgPicker {
   text-align: center;

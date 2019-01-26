@@ -35,6 +35,9 @@
     <div id="ChartContainer">
             <canvas id="ChampionsChart" width="300" height="300"></canvas>
     </div>
+    <button onclick="ChampionsFight()">Start the Fight!</button>
+    <button onclick="stopFight()">Stop the fight</button>
+    <button onclick="clearBattlefield()">Clean the battlefield!</button>
     
   </article>
   <nav id="mainNav">
@@ -62,36 +65,46 @@
             </div>
             <div class="section"><span>2</span>Stats</div>
             <div class="inner-wrap">
-                <label id="AttackFieldInput">Attack : [0]</label>
+                <label id="AttackFieldInput">Attack : [25]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="AttackField" onchange="updateAttackFieldInput(this.value);">
+                  <input type="range" min="1" max="50" value="25" class="slider" id="AttackField" onchange="updateAttackFieldInput(this.value);">
                 </div>
-                <label id="HPFieldInput">HP : [0]</label>
+                <label id="HPFieldInput">HP : [50]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="HPField" onchange="updateHPFieldInput(this.value);">
+                  <input type="range" min="1" max="200" value="50" class="slider" id="HPField" onchange="updateHPFieldInput(this.value);">
                 </div>
-                <label id="ResistFieldInput">Resist : [0]</label>
+                <label id="ResistFieldInput">Defence : [0]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="ResistField" onchange="updateResistFieldInput(this.value);">
+                  <input type="range" min="1" max="50" value="0" class="slider" id="ResistField" onchange="updateResistFieldInput(this.value);">
                 </div>
                 <label id="RegenFieldInput">Regen : [0]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="RegenerationField"  onchange="updateRegenFieldInput(this.value);">
+                  <input type="range" min="1" max="10" value="0" class="slider" id="RegenerationField" onchange="updateRegenFieldInput(this.value);">
                 </div>
-                <label id="DefenceFieldInput">Defence: [0]</label>
-                <div class="slidecontainer">
-                  <input type="range" min="1" max="100" value="50" class="slider" id="DefenceField" onchange="updateDefenceFieldInput(this.value);">
-                </div>
+                <label id="DefenceFieldInput">Special Skill: 
+                        <select id="buffPicker" class="image-picker show-html">
+                                <option data-img-src="img/icons/spike.png" data-img-class="first" data-img-alt="Page 1" value="spike"></option>
+                                <option data-img-src="img/icons/fire.png"  data-img-alt="Page 2" value="fire"></option>
+                                <option data-img-src="img/icons/sleep.png"  data-img-alt="Page 2" value="sleep"></option>
+                                <option data-img-src="img/icons/cold.png" data-img-alt="Page 12" data-img-class="last" value="cold"></option>
+                            </select>
+                </label>
+                <!--<div class="slidecontainer">
+                  <input type="range" min="1" max="50" value="0" class="slider" id="DefenceField" onchange="updateDefenceFieldInput(this.value);">
+                </div>-->
             </div>
             <div class="button-section" id="buttonSection"> 
                 <button onclick="addFighter()">Join</button>
-                <button onclick="ChampionsFight()">Start the Fight!</button>
             </div>
         
     </div>
   </nav>
   <div id="siteAds">Battle Log:</div>
-  <footer id="pageFooter">Additional Info</footer>
+  <footer id="pageFooter"><br>
+    Let's talk about our god of war Cratos... Balance and shit in this game are only controlled by you, User-san.
+    <br>This was created by someome we call 'Senpai'. Yuriy Ivanskyi tried hard to bring his weird idea to life.<br>Support him, send a coin <a href="https://www.facebook.com/yuriy.ivanskyi">here</a>.
+    <br>
+</footer>
   <script src="scripts/logic_main.js"></script>
   <script src="scripts/champions.js"></script>
 </body>
