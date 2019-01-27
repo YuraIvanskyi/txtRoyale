@@ -73,8 +73,8 @@ function Champion(name, attack, hp, resist, icon, regen, buff) {
     this.applySelfDebuf = function() { //retrives own debufs and applies 
         for(item in this.debuffList) {
             if(this.debuffList[item].debuffName === 'cold' && this.debuffList[item].duration > 0){
-                this.attack /= 2;
-                this.resist /= 2;
+                this.attack = Math.round(this.attack / 2);
+                this.resist = Math.round(this.resist / 2);
                 this.debuffList[item].duration--;
                 outputToScreen(`<span class="battle-log-text-buff">{<img class ="battle-log-icon" src="img/avatars/${this.icon}.png">}[${this.name}] suffers from [<img class ="battle-log-icon" src="img/icons/cold.png">] : [<img class ="battle-log-icon" src="img/icons/sword.png">${this.attack}], [<img class ="battle-log-icon" src="img/icons/def.png">${this.resist}]</span>`)
             }
