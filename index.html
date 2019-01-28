@@ -70,19 +70,19 @@
             <div class="inner-wrap">
                 <label id="AttackFieldInput">Attack : [25]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="50" value="25" class="slider" id="AttackField" onchange="updateAttackFieldInput(this.value);">
+                  <input type="range" min="1" max="50" value="25" class="slider" id="AttackField">
                 </div>
                 <label id="HPFieldInput">HP : [50]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="200" value="50" class="slider" id="HPField" onchange="updateHPFieldInput(this.value);">
+                  <input type="range" min="1" max="200" value="50" class="slider" id="HPField">
                 </div>
                 <label id="ResistFieldInput">Defence : [1]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="20" value="1" class="slider" id="ResistField" onchange="updateResistFieldInput(this.value);">
+                  <input type="range" min="1" max="20" value="1" class="slider" id="ResistField" >
                 </div>
                 <label id="RegenFieldInput">Regen : [1]</label>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="10" value="1" class="slider" id="RegenerationField" onchange="updateRegenFieldInput(this.value);">
+                  <input type="range" min="1" max="10" value="1" class="slider" id="RegenerationField">
                 </div>
                 <label class="tooltip" id="DefenceFieldInput">Special Skill: 
                         <span class="tooltiptext">1. Spike - returns 1/3 damage to attacker.
@@ -98,9 +98,6 @@
                                 <option data-img-src="img/icons/cold.png" data-img-alt="Page 12" data-img-class="last" value="cold"></option>
                             </select>
                 </label>
-                <!--<div class="slidecontainer">
-                  <input type="range" min="1" max="50" value="0" class="slider" id="DefenceField" onchange="updateDefenceFieldInput(this.value);">
-                </div>-->
             </div>
             <div class="button-section" id="buttonSection"> 
                 <button onclick="addFighter()">Join</button>

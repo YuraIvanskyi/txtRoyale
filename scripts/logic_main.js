@@ -77,25 +77,22 @@ function generateRandomColor () {
         color:`rgba(${color}, 1)`
     }
 }
+document.getElementById('AttackField').addEventListener("input", updateAttackFieldInput, false);
+document.getElementById('HPField').addEventListener("input", updateHPFieldInput, false);
+document.getElementById('ResistField').addEventListener("input", updateResistFieldInput, false);
+document.getElementById('RegenerationField').addEventListener("input", updateRegenFieldInput, false);
+
 function updateAttackFieldInput(val) {
-    var current = document.getElementById('AttackFieldInput').innerHTML
-    document.getElementById('AttackFieldInput').innerHTML = current.replace(/([\[(])(.+?)([\])])/g, `[${val}]`); 
+    document.getElementById('AttackFieldInput').innerHTML = `Attack : [${document.getElementById('AttackField').value}]`
 }
 function updateHPFieldInput(val) {
-    var current = document.getElementById('HPFieldInput').innerHTML
-    document.getElementById('HPFieldInput').innerHTML = current.replace(/([\[(])(.+?)([\])])/g, `[${val}]`); 
+    document.getElementById('HPFieldInput').innerHTML = `HP : [${document.getElementById('HPField').value}]` 
 }
 function updateResistFieldInput(val) {
-    var current = document.getElementById('ResistFieldInput').innerHTML
-    document.getElementById('ResistFieldInput').innerHTML = current.replace(/([\[(])(.+?)([\])])/g, `[${val}]`); 
+    document.getElementById('ResistFieldInput').innerHTML = `Defence : [${document.getElementById('ResistField').value}]`
 }
 function updateRegenFieldInput(val) {
-    var current = document.getElementById('RegenFieldInput').innerHTML
-    document.getElementById('RegenFieldInput').innerHTML = current.replace(/([\[(])(.+?)([\])])/g, `[${val}]`); 
-}
-function updateDefenceFieldInput(val) {
-    var current = document.getElementById('DefenceFieldInput').innerHTML
-    document.getElementById('DefenceFieldInput').innerHTML = current.replace(/([\[(])(.+?)([\])])/g, `[${val}]`); 
+    document.getElementById('RegenFieldInput').innerHTML = `Regen : [${document.getElementById('RegenerationField').value}]`
 }
 function ChampionsFight(){
     if(figthers.length <= 1)
