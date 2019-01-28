@@ -6,20 +6,28 @@ window.onload = function (){
 }
 function createChart(canvasObj) {
     return new Chart(canvasObj, {
-        type: 'radar',
+        type: 'bar',
         data: {
             labels: ["Attack", "HP", "Defence", "Regeneration"],
             datasets: []
         },
+        tooltips: {
+            mode: 'index',
+            intersect: false
+        },
+        responsive: true,
+        scales: {
+            xAxes: [{
+                stacked: true,
+            }],
+            yAxes: [{
+                stacked: true
+            }]
+        },
         options: {
-            scale: {
-                ticks: {
-                    beginAtZero: true
-                }
-            },
             title: {
                 display: true,
-                text: 'B a t t l e f i e l d',
+                text: 'Battlefield loadout',
                 fontSize:16,
                 fontFamily:"'Press Start 2P', cursive"
             },
@@ -73,7 +81,7 @@ function getChampionStats() {
 function generateRandomColor () {
     var color = `${parseInt(Math.random()*255)}, ${parseInt(Math.random()*255)}, ${parseInt(Math.random()*255)}`
     return {
-        alpha:`rgba(${color}, 0.2)`,
+        alpha:`rgba(${color}, 0.8)`,
         color:`rgba(${color}, 1)`
     }
 }
