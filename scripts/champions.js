@@ -95,7 +95,7 @@ function Champion(name, attack, hp, resist, icon, regen, buff) {
                     this.debuffList.splice(i,1)
             }
         }
-        this.sleepy = this.debuffList.some(e => e.debuffName === 'sleepy') ? true : false;
+        this.sleepy = this.debuffList.some(e => e.debuffName === 'sleep') ? true : false;
         this.attack = this.debuffList.some(e => e.debuffName === 'cold') ? this.attack : this.attack = this.initAttack;
         this.resist = this.debuffList.some(e => e.debuffName === 'cold') ? this.resist : this.resist = this.initResist;
     }
